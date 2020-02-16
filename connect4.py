@@ -69,24 +69,40 @@ def draw_board(board):
 	pygame.display.update()
 
 
+
+#Connect 4 rules
+#Board 6*6 get any 4 ball in a row 
+#column or at a angle
+#get any set of colr /number in this 
+#context
+#create a numpy array for context storing
 board = create_board()
+#print the board/context
 print_board(board)
+#2 varaibles for storing game end and turn
 game_over = False
 turn = 0
 
+#init pygame lib
 pygame.init()
 
-SQUARESIZE = 100
+#size of the game window individual pixel
+SQUARESIZE = 60
 
+# width and height of the window
 width = COLUMN_COUNT * SQUARESIZE
 height = (ROW_COUNT+1) * SQUARESIZE
 
 size = (width, height)
 
+#why use radius?
 RADIUS = int(SQUARESIZE/2 - 5)
 
+#display the screen with the above mentioned size
 screen = pygame.display.set_mode(size)
+#Lets dive in the function
 draw_board(board)
+
 pygame.display.update()
 
 myfont = pygame.font.SysFont("monospace", 75)
